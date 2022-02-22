@@ -1,0 +1,26 @@
+POST http://localhost:8080/authenticate
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "1234"
+}
+
+###
+GET  http://localhost:8080/home
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMiIsImV4cCI6MTYzNTgyNjc0NCwiaWF0IjoxNjM1ODIzMTQ0fQ.RIj2OZppXjcZ2VI71GOvJHfa27u26aDw2Eg76-NI1o7tiiPJBTuRq-LulcS7p2vBJhVa5IOxikWBvfWGh_5R6w
+
+###
+POST http://localhost:8080/user/register
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "1234",
+  "name": "Trinh Van Hiep",
+  "birthday": "20-01-2020",
+  "address": "Hai Phong"
+}
+
+###

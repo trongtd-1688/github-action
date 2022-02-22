@@ -27,10 +27,12 @@ jobs:
           java-version: 11
 
       - name: Run checkstyle
-        uses: nikitasavinov/checkstyle-action@master
+        uses: nikitasavinov/checkstyle-action@0.4.0
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter
+          checkstyle_config: checkstyle.xml
+#          checkstyle_version: 3.0.0
 
 #      - name: Build with Gradle
 #        uses: eskatos/gradle-command-action@v1

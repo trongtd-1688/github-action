@@ -91,12 +91,14 @@
             <version>2.9.2</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-checkstyle-plugin -->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.0.0</version>
-            <type>maven-plugin</type>
+            <version>3.1.2</version>
         </dependency>
+
+
     </dependencies>
 
     <build>
@@ -108,10 +110,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.0.0</version>
-<!--                <configuration>-->
-<!--                    <configLocation>sun_checks.xml</configLocation>-->
-<!--                </configuration>-->
+                <version>3.1.2</version>
+                <configuration>
+                    <configLocation>${project.basedir}/checkstyle.xml</configLocation>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>

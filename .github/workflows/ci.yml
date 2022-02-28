@@ -34,13 +34,13 @@ jobs:
           checkstyle_config: checkstyle.xml
 
       - name: Build and test project with Maven
-        run: mvn -B test --file pom.xml
+        run: mvn -B verify --file pom.xml
 
       - name: Add coverage to PR
         id: jacoco
         uses: madrapps/jacoco-report@v1.2
         with:
-          paths: ${{ github.workspace }}/target/reports/jacoco/test/jacocoTestReport.xml
+          paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
           token: ${{ secrets.GITHUB_TOKEN }}
           min-coverage-overall: 40
 #          min-coverage-changed-files: 60

@@ -107,21 +107,21 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <configLocation>${project.basedir}/checkstyle.xml</configLocation>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
+<!--                <version>3.1.2</version>-->
+<!--                <configuration>-->
+<!--                    <configLocation>${project.basedir}/checkstyle.xml</configLocation>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -131,9 +131,9 @@
                         <goals>
                             <goal>prepare-agent</goal>
                             <goal>report</goal>
-                            <goal>check</goal>
+<!--                            <goal>check</goal>-->
                         </goals>
-                        <configuration>
+<!--                        <configuration>-->
 <!--                            <excludes>-->
 <!--                                <exclude>com/sun/usermanagement/*Application*</exclude>-->
 <!--                                <exclude>com/sun/usermanagement/config/*</exclude>-->
@@ -142,18 +142,18 @@
 <!--                                <exclude>com/sun/usermanagement/dto/**/*</exclude>-->
 <!--                                <exclude>com/sun/usermanagement/security/*</exclude>-->
 <!--                            </excludes>-->
-                            <rules>
-                                <rule>
-                                    <limits>
-                                        <limit>
-                                            <counter>LINE</counter>
-                                            <value>COVEREDRATIO</value>
-                                            <minimum>0.3</minimum>
-                                        </limit>
-                                    </limits>
-                                </rule>
-                            </rules>
-                        </configuration>
+<!--                            <rules>-->
+<!--                                <rule>-->
+<!--                                    <limits>-->
+<!--                                        <limit>-->
+<!--                                            <counter>LINE</counter>-->
+<!--                                            <value>COVEREDRATIO</value>-->
+<!--                                            <minimum>0.3</minimum>-->
+<!--                                        </limit>-->
+<!--                                    </limits>-->
+<!--                                </rule>-->
+<!--                            </rules>-->
+<!--                        </configuration>-->
                     </execution>
                 </executions>
             </plugin>

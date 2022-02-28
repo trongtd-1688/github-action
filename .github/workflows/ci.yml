@@ -33,12 +33,21 @@ jobs:
           reporter: github-pr-review # Change reporter
           checkstyle_config: checkstyle.xml
 
-#      - name: Build with Gradle
-#        uses: eskatos/gradle-command-action@v1
-#        with:
-#          dependencies-cache-enabled: true
-#          configuration-cache-enabled: true
-#          arguments: jacocoTestReport
+      - name: Build with Gradle
+        uses: eskatos/gradle-command-action@v1
+        with:
+          dependencies-cache-enabled: true
+          configuration-cache-enabled: true
+          arguments: jacocoTestReport
+
+      - name: Add coverage to PR
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.2
+        with:
+          paths: ${{ github.workspace }}/build/reports/jacoco/test/jacocoTestReport.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 40
+#          min-coverage-changed-files: 60
 #
 #      - name: ReportGenerator
 #        uses: danielpalme/ReportGenerator-GitHub-Action@4.8.6

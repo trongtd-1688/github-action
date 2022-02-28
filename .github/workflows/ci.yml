@@ -33,10 +33,8 @@ jobs:
           reporter: github-pr-review # Change reporter
           checkstyle_config: checkstyle.xml
 
-      - name: Build Maven
-        uses: qcastel/github-actions-maven/actions/maven@master
-        with:
-          maven-args: "jacocoTestReport"
+      - name: Build and test project with Maven
+        run: mvn -B package --file pom.xml
 
       - name: Add coverage to PR
         id: jacoco

@@ -5,9 +5,9 @@ import com.sun.usermanagement.common.Exception.UserManagementException;
 import com.sun.usermanagement.common.dao.UserRepository;
 import com.sun.usermanagement.common.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Optional;
 
